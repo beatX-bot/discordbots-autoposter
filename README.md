@@ -1,16 +1,20 @@
-# Top.gg AutoPoster
-Easy AutoPosting via the [top.gg sdk](https://npmjs.com/package/@top-gg/sdk)
+# Discord.bots.gg AutoPoster
+Easy AutoPosting via the unofficial [discord.bots.gg SDK](https://github.com/beatX-bot/discordbots-node-sdk)
 
-# How to
-It's really really simple! All you gotta do is:
+### Disclaimer
+
+This module is based on the code of the Top.gg autoposter available [here](https://github.com/jpbberry/topgg-autoposter)
+However, the codebase has been modified to work with the unofficial discord.bots.gg SDK
+
+# Example Usage
 ```js
-const { AutoPoster } = require('topgg-autoposter')
+const { AutoPoster } = require('@beatx/dbots-autoposter')
 
-const poster = AutoPoster('topggtoken', client) // your discord.js or eris client
+const poster = AutoPoster('dbotstoken', client) // your discord.js or eris client
 
 // optional
 poster.on('posted', (stats) => { // ran when succesfully posted
-  console.log(`Posted stats to Top.gg | ${stats.serverCount} servers`)
+  console.log(`Posted stats to Discord.bots.gg | ${stats.serverCount} servers`)
 })
 ```
 *You can also do poster.on('error', (err) => { ... }) and this will stop errors from being logged and left for you to handle*
@@ -30,7 +34,7 @@ If you use Discord.JS' traditional `ShardingManager` sharder, you can also appen
 ```js
 const sharder = new Discord.ShardingManager(...)
 
-const poster = AutoPoster('topggtoken', sharder)
+const poster = AutoPoster('dbotstoken', sharder)
 
 sharder.spawn() // rest of your stuff!
 ```
@@ -41,6 +45,6 @@ This will run broadcastEval's and automatically fetch your statistics!
 ```js
 const master = new Master(...)
 
-const poster = AutoPoster('topggtoken', master)
+const poster = AutoPoster('dbotstoken', master)
 ```
 And it will run everything through comms.getStats() function

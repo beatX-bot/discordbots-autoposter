@@ -9,22 +9,22 @@ import { PosterOptions } from './typings'
 
 /**
  * Create an AutoPoster
- * @param token Top.gg Token
+ * @param token Discord.bots.gg Token
  * @param client Your Discord.js/Eris Client or Discord.js ShardingManager
  * @param options Options
  * @example
- * const AutoPoster = require('topgg-autoposter')
- * 
- * AutoPoster('topggtoken', client) // that's it!
+ * const AutoPoster = require('@beatx/dbots-autoposter')
+ *
+ * AutoPoster('dbotstoken', client) // that's it!
  */
 export function AutoPoster (token: string, client: any, options?: PosterOptions): BasePoster {
-  if (!token) throw new Error('Top.gg token is missing')
+  if (!token) throw new Error('Discord.bots.gg token is missing')
   if (!client) throw new Error('Client is missing')
   let DiscordJS
   try {
     DiscordJS = require.cache[require.resolve('discord.js')]
   } catch (err) {}
-    
+
   let Eris
   try {
     Eris = require.cache[require.resolve('eris')]

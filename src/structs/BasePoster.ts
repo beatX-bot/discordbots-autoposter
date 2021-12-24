@@ -1,7 +1,7 @@
-import { Api } from '@top-gg/sdk'
+import { Api } from '@beatx/dbots-sdk'
 import { EventEmitter } from '@jpbberry/typed-emitter'
 
-import { BotStats } from '@top-gg/sdk/dist/typings'
+import { BotStats } from '@beatx/dbots-sdk/dist/typings'
 
 import { PosterOptions } from '../typings'
 

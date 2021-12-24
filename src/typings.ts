@@ -1,4 +1,4 @@
-import { Api } from '@top-gg/sdk'
+import { Api } from '@beatx/dbots-sdk'
 
 export interface PosterOptions {
   /**

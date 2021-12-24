@@ -1,6 +1,6 @@
 import { BasePoster, BasePosterInterface } from './BasePoster'
 
-import { BotStats } from '@top-gg/sdk/dist/typings'
+import { BotStats } from '@beatx/dbots-sdk/dist/typings'
 
 import { ShardingManager } from 'discord.js'
 
@@ -14,12 +14,12 @@ export class DJSSharderPoster extends BasePoster implements BasePosterInterface 
 
   /**
    * Create a new poster
-   * @param token Top.gg API Token
+   * @param token Discord.bots.gg API Token
    * @param client Your Discord.JS ShardingManager
    * @param options Options
    */
   constructor (token: string, client: any, options?: PosterOptions) {
-    if (!token) throw new Error('Missing Top.gg Token')
+    if (!token) throw new Error('Missing Discord.bots.gg Token')
     if (!client) throw new Error('Missing client')
 
     const Discord = require('discord.js')
