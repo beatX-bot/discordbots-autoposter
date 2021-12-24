@@ -49,6 +49,7 @@ export class DJSPoster extends BasePoster implements BasePosterInterface {
 
   public async getStats (): Promise<BotStats> {
     return {
+      botId: this.client.user.id,
       serverCount: this.client.guilds.cache.size,
       shardId: this.client.shard?.ids[0],
       shardCount: this.client.options.shardCount || 1
